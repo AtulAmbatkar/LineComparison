@@ -16,10 +16,10 @@ public class LineComparisonUsinEquals {
 		double x2 = scn.nextDouble();
 		double y2 = scn.nextDouble();
 		
-		Line line1 = new Line(x1,y1);
-		Line line2 = new Line(x2,y2);
+		Point line1 = new Point(x1,y1);
+		Point line2 = new Point(x2,y2);
 		
-		if(line1.euals(line2)) {
+		if(line1.equals(line2)) {
 			System.out.println("Both line are euals ");
 		}else {
 			System.out.println("BOth line are not euals: ");

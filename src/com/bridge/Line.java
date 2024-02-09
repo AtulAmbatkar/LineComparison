@@ -2,41 +2,31 @@ package com.bridge;
 
 public class Line {
 	
-	private double x;
-	private double y;
+	private Point startPoint;
+	private Point endPoint ;
 	
 	public Line() {
 		
 	}
 	
-	public Line(double x, double y) {
-		this.x = x;
-		this.y = y;
+	public Line(Point startPoint, Point endPoint) {
+		this.startPoint = startPoint;
+		this.endPoint= endPoint;
 	}
 	
-	public double getX() {
-		return x;
-	}
 	
-	public double getY() {
-		return y;
-	}
-
-	public boolean euals(Object obj) {
+	private double length() {
+		double hrdX = endPoint.getX() - startPoint.getX();
+		double vrdY = endPoint.getY() - startPoint.getY();
 		
-		if(null == obj) {
-			return false;
-		}
-		else {
-			if(obj instanceof Line) {
-				Line s = (Line) obj;
-				return this.x == s.x && this.y == s.y; 
-			}
-			return false;
-		}
+		return Math.sqrt(hrdX * hrdX + vrdY * vrdY);
+	}
+	
+	public int compareTo(Line length) {
+		return (int) (this.length() - length.length());
 	}
 	
 	public String toString() {
-		return " [ x: " + x + "y: + y + ]";
+		return " [ startPoint: " + startPoint + "endPoint: + endPoint + ]";
 	}
 }
